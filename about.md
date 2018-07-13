@@ -1,18 +1,14 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hi! My name is Chun Li, and this is my blog.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I have a Bachelors of Computer Science from the University of Waterloo, and am
+currently living in Toronto with my black moggy Chio. He likes to stay up with
+me when I work late at night, but doesn't always manage to stay awake! :smile:
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+I like solving puzzles and building things. Otherwise, I also enjoy reading,
+deep talks with Alli, and cooking (also my cat!).
