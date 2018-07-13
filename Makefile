@@ -4,6 +4,6 @@
 prod:
 	JEKYLL_ENV=production bundle exec jekyll build
 dev:
-	JEKYLL_ENV=development bundle exec jekyll serve --detach
+	JEKYLL_ENV=development bundle exec jekyll serve
 all:
 	bundle exec jekyll build
