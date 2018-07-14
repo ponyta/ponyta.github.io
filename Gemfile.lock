@@ -36,6 +36,8 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-compose (0.8.0)
+      jekyll (~> 3.0)
     jekyll-feed (0.10.0)
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
@@ -56,10 +58,6 @@ GEM
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
     mini_portile2 (2.3.0)
-    minima (2.5.0)
-      jekyll (~> 3.5)
-      jekyll-feed (~> 0.9)
-      jekyll-seo-tag (~> 2.1)
     minitest (5.11.3)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -86,9 +84,10 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.3)
-  jekyll-feed (~> 0.6)
+  jekyll-compose
+  jekyll-feed (~> 0.9)
+  jekyll-seo-tag (~> 2.1)
   jemoji
-  minima (~> 2.0)
   tzinfo-data
 
 BUNDLED WITH
