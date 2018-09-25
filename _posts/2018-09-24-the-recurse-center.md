@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Recurse Center
+categories: update recurse
 ---
 
 Today is the first day of my 3 month batch at the [Recurse
