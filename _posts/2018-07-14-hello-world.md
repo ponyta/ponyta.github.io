@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hello World!"
-categories: jekyll update
+tags: jekyll update
 ---
 
 It look me way more effort than was necessary, but I've got most of the

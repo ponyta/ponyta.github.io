@@ -1,14 +1,14 @@
 ---
 layout: post
 title: The Recurse Center
-categories: update recurse
+tags: update recurse
 ---
 
 Today is the first day of my 3 month batch at the [Recurse
 Center](https://www.recurse.com/)! Last month, I quit working at
-BiblioCommons to pursue new opportunities, and dedicating the next
-3 months to growing as a programmer. It's quite overwhelming and scary
-(I've met so many new people in the last 24 hours!), but also exciting.
+BiblioCommons to pursue new opportunities and dedicate the next 3 months
+to growing as a programmer. It's quite overwhelming and scary (I've met so
+many new people in the last 24 hours!), but also exciting.
 
 It's been a month of big changes for me: I moved out of my apartment by
 the St. Lawrence Market, I left my cat in Markham with my parents, I flew
