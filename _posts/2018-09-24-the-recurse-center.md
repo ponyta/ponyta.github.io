@@ -12,7 +12,7 @@ many new people in the last 24 hours!), but also exciting.
 
 It's been a month of big changes for me: I moved out of my apartment by
 the St. Lawrence Market, I left my cat in Markham with my parents, I flew
-to Brooklyn, I've moved between multiple AirBnB's, I've barely had time to
+to Brooklyn, I've moved between multiple Airbnbs, I've barely had time to
 do laundry, and now I'm saying goodbye to my girlfriend for the next
 3 months. It doesn't seem like too much on paper, but I think it's all
 hitting me suddenly. I've met a ton of new friendly people, and yet
