@@ -11,23 +11,19 @@ group $5. It doesn't have to be about tech or software, and even if it's
 obvious filler material it still counts. The point is to just get in the
 habit of publishing and writing every week.
 
-Although I am very much interested in software, I don't think all (or
-maybe even most!) of my posts will be technical. Firstly, posting every
-week is frequent enough that some weeks, I'll just have nothing new to
-write about. However, the point of this challenge for me is not about
-showing off new programming projects, or things I've learned. Really,
-I only have one goal in particular:
+For me, the point of this challenge for me is not about showing off new
+programming projects, sharing my thoughts, or even having people read my
+blog. Really, I only have one goal in particular:
 
 **I want to practice writing**
 
-To me, blogging isn't about sharing my thoughts, or trying to establish
-some online presence; it's really just a way for me to practice writing.
-Personally, I think writing is an incredibly important skill in software
-engineering, and in general. I can't even begin to count the amount of
-communication I've done at work through written documentation, countless
-README files, Slack messages, and emails. Although technical writing is
-a bit of a different beast compared to blogging, I think that just
-practicing writing is an important exercise for any software engineer.
+Blogging is really just a way for me to practice writing. Personally,
+I think writing is an incredibly important skill in software engineering,
+and in general. I can't even begin to count the amount of communication
+I've done at work through written documentation, countless README files,
+Slack messages, and emails. Although technical writing is a bit of
+a different beast compared to blogging, I think that just practicing
+writing is an important exercise for any software engineer.
 
 In terms of topics, I definitely want to cover various technical subjects
 (I am a programmer after all) that I learn about. Hopefully I will have
