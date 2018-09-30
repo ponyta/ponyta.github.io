@@ -20,11 +20,13 @@ I only have one goal in particular:
 
 **I want to practice writing**
 
+To me, blogging isn't about sharing my thoughts, or trying to establish
+some online presence; it's really just a way for me to practice writing.
 Personally, I think writing is an incredibly important skill in software
 engineering, and in general. I can't even begin to count the amount of
 communication I've done at work through written documentation, countless
-README files, Slack messages, and emails. Although technical writing
-is a bit of a different beast compared to blogging, I think that just
+README files, Slack messages, and emails. Although technical writing is
+a bit of a different beast compared to blogging, I think that just
 practicing writing is an important exercise for any software engineer.
 
 In terms of topics, I definitely want to cover various technical subjects
