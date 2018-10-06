@@ -166,9 +166,9 @@ function `a` times (and same for `b`). Thus, we can use this to our advantage by
 Let's try to expand our number system a bit further. Given `a` and `b`, how can we return `a*b`?
 
 If you consider the definition of multiplication, it actually becomes a similar problem as above.
-`a*b` is just `a` summed to itself `b` times, or applying `f` to `x`, `a` times, and then doing that
-process again `b` times. The only tricky part is creating a function that will apply `f`, `a`
-times[^5].
+`a*b` is just `a` summed to itself `b` times. Or in other terms, it's applying `f` to `x`, `a`
+times, and then doing that process again `b` times. The only tricky part is creating a function
+that will apply `f`, `a` times[^5].
 
 ```racket
 (define (mult a b)
