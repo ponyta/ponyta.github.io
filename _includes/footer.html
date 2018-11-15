@@ -2,32 +2,42 @@
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
+      <ul class="footer-list">
+        {%- if site.email -%}
+          <li>
+            <a class="u-email" href="mailto:{{ site.email }}">
+              <img class="svg-icon" src="{{ '/assets/feather/mail.svg' | relative_url }}" />
+              <span class="email">
+                {{ site.email }}
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if site.github_username -%}
+          <li>
+            <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
+              <img class="svg-icon" src="{{ '/assets/feather/github.svg' | relative_url }}" />
+              <span class="username">
+                {{ site.github_username| escape }}
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if site.twitter_username -%}
+          <li>
+            <a href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}">
+              <img class="svg-icon" src="{{ '/assets/feather/twitter.svg' | relative_url }}" />
+              <span class="username">
+                {{ site.twitter_username| escape }}
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+        <li>
+          <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        </li>
+      </ul>
     </div>
 
   </div>
