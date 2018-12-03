@@ -4,24 +4,22 @@ title: Simple Church Numerals
 tags: sicp functional recurse
 ---
 
-# Foreward
+# Foreword
 
 I've been working through [Structure and Interpretation of Computer
-Programs](http://sarabander.github.io/sicp/html/) lately, and recently
+Programs](http://sarabander.github.io/sicp/html/) lately and recently
 went through an interesting exercise on Church numerals. I wanted to share
 what I learned, so here is my simplified presentation on them!
 
-# In the beginning there was only lambda...
+# In the beginning, there was only lambda...
 
 Some of the most interesting exercises in SICP involve showcasing how some
-primitive languages features can be built using nothing but lambdas. To start,
+primitive language features can be built using nothing but lambdas. To start,
 I'm going to introduce some of the basics of Racket itself so that we can build
 a primitive system of numbers called Church numerals[^1] on top of it.
 
-At it's heart, Racket is a pretty simple language. I am going to quickly introduce the very basics
-of the language.
-
-To call a function f with arguments a1 and a2, simply type `(f a1 a2)`. For example,
+At its heart, Racket is a pretty simple language. To call a function `f` with
+arguments `a1` and `a2`, simply type `(f a1 a2)`. For example,
 
 ```racket
 (+ 4 5 (* 2 3))
@@ -56,11 +54,11 @@ so:
 => 4
 ```
 
-You may notice a similarity between the last two examples. In fact the two
+You may notice a similarity between the last two examples. In fact, the two
 definitions of `square` are exactly the same; the first is just **syntactic
 sugar**[^2] for the second.
 
-We can call any function the same way as shown above; via parenthesis `(square 4)`. Whatever values
+When we call any function via parenthesis (for example, `(square 4)`), whatever values
 are sent as arguments to the function are substituted in the function body's definition and
 simplified. This is called the **substitution model**, and it is a simple way of thinking how a
 Lisp interpreter might function. For example, calling `(square 4)` would substitute `4` for `x` in
@@ -69,12 +67,12 @@ us `(* 4 4)` which is then simplified to `16`.
 
 So with our base set, let us move on to...
 
-# What are numbers really?
+# What are numbers, really?
 
-A number system has a lot of properties that we take for granted[^3]. For now, let's
-just implement a primitive set of numbers that we can increment and add together.
+A number system has a lot of properties that we take for granted.[^3] For now, let's
+just implement a primitive set of numbers that we can increment and add.
 
-We start with zero and an increment function[^4]:
+We start with zero and an increment function:[^4]
 
 ```racket
 (define zero ; i.e. zero is a function with two arguments f and x
@@ -165,10 +163,10 @@ function `a` times (and same for `b`). Thus, we can use this to our advantage by
 
 Let's try to expand our number system a bit further. Given `a` and `b`, how can we return `a*b`?
 
-If you consider the definition of multiplication, it actually becomes a similar problem as above.
-`a*b` is just `a` summed to itself `b` times. Or in other terms, it's applying `f` to `x`, `a`
-times, and then doing that process again `b` times. The only tricky part is creating a function
-that will apply `f`, `a` times[^5].
+If you consider the definition of multiplication, the problem actually becomes
+similar to addition. `a*b` is just `a` summed to itself `b` times. Or in other
+terms, it's f(x) applied a times, and then doing that process again b times. The
+only tricky part is creating a function that calculates `f` applied `a` times.[^5]
 
 ```racket
 (define (mult a b)
@@ -183,14 +181,14 @@ that will apply `f`, `a` times[^5].
 => 12 ; horray!
 ```
 
-# The End
+# The end
 
 Now that we've designed a basic set of operations for Church numerals, you might want to try
-implementing more complicated procedures. Here are a few interesting exercises you might want to try:
+implementing more complicated procedures. Here are a few interesting exercises to try:
 
-1. Can you implement exponentiation? How about even higher-ordered procedures, like Knuth's [up-arrow](https://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation) operations (tetration, e.t.c.)?
-2. Can you generalize operations and write a procedure that returns a general [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation)? (i.e. `(generate-hyperop 0)` would return the `inc` procedure, `(generate-hyperop 1)` would return `add`)
-3. Can you implement subtraction? (Hint: try implementing the predecessor `pre` function that returns the number that comes before its argument). This is actually a lot trickier than it looks.
+1. Can you implement exponentiation? How about even higher-ordered procedures, like Knuth's [up-arrow](https://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation) operations (tetration, etc.)?
+2. Can you generalize operations and write a procedure that returns a general [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation)? (I.e. `(generate-hyperop 0)` would return the `inc` procedure, `(generate-hyperop 1)` would return `add`.)
+3. Can you implement subtraction? (Hint: try implementing the predecessor `pre` function that returns the number that comes before its argument.) This is actually a lot trickier than it looks.
 
 If you are interested in building things out of nothing but functions, then you may want to read up on [Church encoding](https://en.wikipedia.org/wiki/Church_encoding) and [lambda calculus](https://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf)!
 
@@ -198,12 +196,12 @@ If you are interested in building things out of nothing but functions, then you 
 <hr />
 <br />
 
-[^1]: Church numerals were invented by a famous mathematician [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church).
+[^1]: Church numerals were invented by the famous mathematician [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church).
 
-[^2]: Syntactic sugar is just a different syntax that is easier for humans to read/write. In most cases, defining square in the style of the first example is easier to understand.
+[^2]: Syntactic sugar is just a different syntax that is easier for humans to read or write in. In most cases, defining square in the style of the first example is easier to understand.
 
 [^3]: In this article, we will only consider positive numbers and zero. It is possible to do negative numbers using only lambdas, but it's more complicated.
 
-[^4]: In the book (and I believe most definitions of Church numerals), the functions are [curried](https://en.wikipedia.org/wiki/Currying) (they all have one argument). However, this makes it a little more complicated to understand what's going on, so for the sake of simplicity these definitions might not be 100% accurate.
+[^4]: In the book (and I believe most definitions of Church numerals), the functions are [curried](https://en.wikipedia.org/wiki/Currying) (they all have one argument). However, this makes it a little more complicated to understand what's going on, so for the sake of simplicity, these definitions might not be 100% accurate.
 
 [^5]: If we had a curried definition of Church numerals, we actually wouldn't have to define this new anonymous function.
