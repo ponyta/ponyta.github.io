@@ -8,10 +8,18 @@ tags: javascript
 
 # What does prototype-based programming mean?
 
-Javascript (like many modern languages) supports object-oriented programmming. However, while most people are used to a class-bassed
-implementation, where objects are created from a set of blueprints called a **class**, Javascript implements a different model
-called **prototype-based** programming (also known as classless, or instance based programming). Characteristically of
-Javascript, a prototype-based model gives us a powerful, but also confusing and dangerous paradigm.
+You may have heard that Javascript is a prototype-based programming language and been confused on what that means. What is
+a prototype? How does this differ from other languages like Java or C++? And what can I do with this new paradigm? This post
+aims to explain the details of prototype-based programming, and showcases how to utilize its power to implement some common
+patterns like behaviour reuse or inheritance.
+
+Prototype-based programming (also known as classless, or instance-based programming) is a way of implementing object-oriented
+programming. It utilizes objects (called **prototypes**) to define behaviour reuse. In contrast, a **class-based**
+implementations (seen in languages like Java and C++), creates objects from a set of blueprints called a **class**,
+which define their behaviour. Characteristically of Javascript, a prototype-based model gives us a powerful, but also
+confusing and dangerous paradigm.
+
+Confused? Don't worry you're not the only one, but hopefully by the end of this post everything will be clearer.
 
 **Note**: If you would like to try the examples in this post, they have been tested on
 Google Chrome. They may work in other Javscript environments, but it is not guarenteed.
@@ -72,12 +80,9 @@ This is because of something called the **prototype chain**.
 
 # The prototype chain
 
-If you ask an object for a property and Javascript can't find it defined on the object itself, it will travel
-up the object's prototype chain looking for the property. If it hits the end and doesn't find it, it returns an
-error.
-
-You can view an object's prototype by using the `Object.getPrototypeOf` method on an object. For example, let's
-look at what `frank`'s prototype has:
+Before we can talk about a prototype chain, we have to first take a look at what prototypes are. Almost every
+object in Javascript will have a prototype, which we can view by using the `Object.getPrototypeOf` method. For 
+example, let's look at what `frank`'s prototype has:
 
 ```javascript
 Object.getPrototypeOf(frank);
@@ -99,8 +104,12 @@ effects, and is not recommended.
 
 You'll find that `toString` method that we were wondering about before!
 
+But where did this prototype come from? Well it turns out that whenever we create an object with the
+`{}` syntax, the interpreter automatically assigns it the Object prototype. 
+
 It's also important to know that if Javascript can't find the property in the prototype of the object you were looking
-at, it continues looking at the prototype's prototype, and so on until there are no more prototypes.
+at, it continues looking at the prototype's prototype, and so on until there are no more prototypes. If it hits
+the end and doesn't find it, it returns an error. This sequence of prototypes is called the **prototype chain**.
 
 {% capture note4 %}
 You might wonder what is at the end of the prototype chain. The root of the prototype chain is called `Object.prototype`
@@ -109,8 +118,8 @@ You might wonder what is at the end of the prototype chain. The root of the prot
 Try the following code out yourself:
 
 ```javascript
-var rootProto = Object.getPrototypeOf({})
-rootProto == Object.prototype // => true
+var rootProto = Object.getPrototypeOf({});
+rootProto === Object.prototype; // => true
 Object.getPrototypeOf(rootProto); // => null
 ```
 {% endcapture %}
@@ -127,11 +136,10 @@ var someOtherObj = { test: 'foo' };
 someOtherObj.hello(); // "hello world!"
 ```
 
-Although modifying widely used prototypes such as Object's or Array's is probably bad engineering practice.
+Although it's important to note that modifying widely used prototypes such as Object's or Array's is 
+probably bad engineering practice.
 
-But where did this prototype come from? Well it turns out that whenever we create an object with the
-`{}` syntax, the interpreter automatically assigns it the Object prototype. However, we don't always want objects
-with an Object prototype, which leads us to...
+However, we don't always want objects with an Object prototype, which leads us to...
 
 # The new keyword
 Another way to create new objects in Javascript is by utilizing the `new` keyword
@@ -150,9 +158,9 @@ If you don't believe me, try the following code:
 
 ```javascript
 function Foo() { }
-Foo.prototype == Object.getPrototypeOf(Foo); // false
+Foo.prototype === Object.getPrototypeOf(Foo); // false
 // actually, Foo's prototype is Function.prototype
-Object.getPrototypeOf(Foo) == Function.prototype; // true
+Object.getPrototypeOf(Foo) === Function.prototype; // true
 ```
 
 This is a pretty big source of confusion since I'll often state things like "an object's prototype". This always refers to the value
@@ -226,7 +234,7 @@ have to find a third way of creating objects.
 
 # Object.create
 
-`Object.create` is probably actually the simplist way to create an object with an explicit prototype; it takes a prototype
+`Object.create` is probably actually the simplest way to create an object with an explicit prototype; it takes a prototype
 as a parameter and returns a new object with its prototype set to the parameter passed in. For example:
 
 ```javascript
@@ -256,6 +264,22 @@ constructor's context.
 `dog.speak()` was called, `this` would refer to `dog` while the `speak` function is executing.
 4. Finally, you can set the value of `this` by using the special function `foo.call(context, arg1, arg2, ..., argn)`, which
 calls `foo` with arguments `arg1`, `arg2`, ..., `argn` and sets `this` to `context` while it is executing.
+
+To illustrate the last case, we can call the `Horse` constructor and manually set the value of `this` ourselves:
+
+```javascript
+var bojack = {};
+// call without using new!
+Horse.call(bojack, // I want bojack to be this
+           'brown',
+           'I have no rider...');
+// now bojack has the properties defined by the constructor
+bojack.color; // brown
+bojack.rider; // I have no rider...
+// notice because we didn't use new, myHorse doesn't have a Horse prototype
+bojack.speak(); // ERROR: bojack.speak is not a function
+Object.getPrototypeOf(bojack) === Horse.prototype; // false
+```
 
 (For a complete summary of all cases, always refer to documentation such as
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this))
