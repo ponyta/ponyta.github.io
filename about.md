@@ -11,12 +11,9 @@ and a black cat Pistachio (although I call him Chio). He likes to stay up
 with me when I work late at night, but doesn't always manage to stay
 awake! :smile:
 
-I like solving puzzles and building things. Otherwise, I also enjoy
-reading, playing with my cat, deep talks with Alli, and cooking.
+I enjoy reading, playing with my cat, walks with my girlfriend Allison, and cooking.
 
-I am currently studying in Brooklyn, at the [Recurse
-Center](https://www.recurse.com)! It is super exciting, and hopefully
-I will blog about it.
+I am currently studying in Brooklyn, at the [Recurse Center](https://www.recurse.com)!
 
 ### Past Work
 
