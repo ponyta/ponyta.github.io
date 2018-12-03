@@ -85,14 +85,14 @@ Object.getPrototypeOf(frank);
 // {
 //   constructor: f Object()...
 //   toString: f toString() .... // hey that's our toString property!:
-//   .... 
+//   ....
 // }
 ```
 
 {% capture note3 %}
 Most implementations of Javascript will also expose an object's prototype with the `.__proto__` property, which is
 similar to `setPrototypeOf` and `getPrototypeOf`. However, this was not meant to be in the specification, and is
-not guarenteed to work. Also, keep in mind that using either `.__proto__` or `setPrototypeOf` has subtle performance 
+not guarenteed to work. Also, keep in mind that using either `.__proto__` or `setPrototypeOf` has subtle performance
 effects, and is not recommended.
 {% endcapture %}
 {% include note.html content=note3 %}
@@ -257,12 +257,12 @@ constructor's context.
 4. Finally, you can set the value of `this` by using the special function `foo.call(context, arg1, arg2, ..., argn)`, which
 calls `foo` with arguments `arg1`, `arg2`, ..., `argn` and sets `this` to `context` while it is executing.
 
-(For a complete summary of all cases, always refer to documentation such as 
+(For a complete summary of all cases, always refer to documentation such as
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this))
 
 {% capture note8 %}
-Javascript has introduced a new way of defining functions using the `=>` syntax called 
-[**arrow functions**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). 
+Javascript has introduced a new way of defining functions using the `=>` syntax called
+[**arrow functions**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 A lot of the behaviour discussed here does not apply to these, and you should read the documentation
 for more information (for example, arrow functions don't rebind the `this` keyword, and they do not have a `prototype`
 property for usage as a constructor).
@@ -283,7 +283,7 @@ Object.prototype.constructor === Object;
 
 // a new constructor
 function Monkey() {}
-// just to illustrate, Javascript creates a prototype 
+// just to illustrate, Javascript creates a prototype
 // for Dog for use with the new keyword
 var wuKong= new Monkey();
 // also true for prototypes automatically created by Javascript
@@ -299,7 +299,7 @@ var myProto = {}; // making my own custom prototype
 var foo = Object.create(myProto);
 // we travel up the prototype chain myProto -> Object.prototype,
 // finding the constructor property
-foo.constructor === Object; 
+foo.constructor === Object;
 ```
 
 The `constructor` property is used in the `instanceof` keyword. More specifically, `object instanceof constructor` returns true if and only if
@@ -309,8 +309,8 @@ Overall, it's probably best to have constructor of a prototype set to the proper
 
 # Inheritance
 
-Now that we have all our ducks in a row, we're ready to implement some class-like inheritance! The goal for now 
-is to implement a base `Animal` constructor, and then a `Cat` constructor. Objects created by `Cat` should 
+Now that we have all our ducks in a row, we're ready to implement some class-like inheritance! The goal for now
+is to implement a base `Animal` constructor, and then a `Cat` constructor. Objects created by `Cat` should
 inherit any behaviour `Animal` objects have via the prototype chain.
 
 Let's start with `Animal`. Objects of type `Animal` should have a simple prototype chain of just `Animal.prototype`
@@ -379,7 +379,7 @@ myAnimal instanceof Cat; // false
 
 # Accessing the prototype
 
-We've learned how to manipulate prototypes and the prototype chain, but we *haven't* seen how to change an object's 
+We've learned how to manipulate prototypes and the prototype chain, but we *haven't* seen how to change an object's
 prototype once it has already been created. This is actually possible using a special function called
 `Object.setPrototypeOf(obj, prototype)`. However, it is strongly recommended to **never do this**. Javascript engines
 implement many optimizations to speed up property access, and allowing dynamic updates to an object's prototype can
@@ -428,7 +428,7 @@ to inherit from `Parent`:
 
 If you think you got it, try implementing these problems to test your knowledge:
 
-1. Change our `Dog` constructor to properly create objects that inherit from `Animal`.
+1. Change `Dog` to properly create objects that inherit from `Animal`.
 2. Implement an equivalent to static methods, like an `Animal.randomAnimal()` method that generates a new `Animal` with
 random property values. What is the value of `this` when calling this method?
 3. Implement an equivalent to static fields, like a `Cat.BREEDS` field that stores all `Cat` breeds. Make sure it behaves
@@ -474,7 +474,7 @@ try typing in `typeof NaN`).
 
 # Final
 Although prototype-based programming is interesting and powerful, from an engineering perspective it may be overly
-complicated and dangerous. There is a new `class` keyword coming in JavaScript that seems to abstract a lot of the 
+complicated and dangerous. There is a new `class` keyword coming in JavaScript that seems to abstract a lot of the
 troubles, and probably covers most engineer's usecases. I would probably recommend looking at that for practical purposes.
 
 Also, I didn't really go into what makes prototype-based programming so especially powerful. The main reason is that because
