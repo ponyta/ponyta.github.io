@@ -24,6 +24,6 @@ I interned at [Yext](https://www.yext.com) twice.
 
 I interned at [Reflektion](http://www.reflektion.com) as well.
 
-Feel free to check out my [Github](https://www.github.com/ponyta) and my
-[personal git server](https://git.chunli.me). My
-[website](https://chunli.me) is currently under construction, sorry!
+Feel free to check out my [Github](https://www.github.com/ponyta), my
+[personal git server](https://git.chunli.me), and my
+[website](https://chunli.me).
