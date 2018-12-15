@@ -72,7 +72,7 @@ So with our base set, let us move on to...
 A number system has a lot of properties that we take for granted.[^3] For now, let's
 just implement a primitive set of numbers that we can increment and add.
 
-We start with zero and an increment function:[^4]
+We start with `zero` and an increment function:[^4]
 
 ```racket
 (define zero ; i.e. zero is a function with two arguments f and x
@@ -100,7 +100,7 @@ what actually happens when we apply the increment function using simple substitu
       (f x)))
 ```
 
-So the Church representation for one would be `(lambda (f x) (f x))`. Let's see how two would be
+So the Church representation for one would be `(lambda (f x) (f x))`. Let's see how `two` would be
 represented:
 
 ```racket
@@ -115,7 +115,7 @@ represented:
       (f (f x))))
 ```
 
-Looking at the definitions for one and two, it becomes much clearer what our increment function is
+Looking at the definitions for `one` and `two`, it becomes much clearer what our increment function is
 doing. Every time we increment a number, we add another application of `f` to `x`. Thus, the number
 `zero` is a function that takes in a function `f` and a value `x`, and applies `f` to `x` exactly
 zero times (i.e. it just returns `x`). Similarly, `one` is a function that applies `f` to `x`
@@ -165,7 +165,7 @@ Let's try to expand our number system a bit further. Given `a` and `b`, how can 
 
 If you consider the definition of multiplication, the problem actually becomes
 similar to addition. `a*b` is just `a` summed to itself `b` times. Or in other
-terms, it's f(x) applied a times, and then doing that process again b times. The
+terms, it's `f(x)` applied `a` times, and then doing that process again `b` times. The
 only tricky part is creating a function that calculates `f` applied `a` times.[^5]
 
 ```racket
