@@ -498,8 +498,9 @@ try typing in `typeof NaN`).
 
 # Final
 Although prototype-based programming is interesting and powerful, from an engineering perspective it may be overly
-complicated and dangerous. There is a new `class` keyword coming in JavaScript that seems to abstract a lot of the
-troubles, and probably covers most engineer's usecases. I would probably recommend looking at that for practical purposes.
+complicated and dangerous. There is also a `class` keyword in JavaScript that seems to abstract a lot of the
+troubles, and probably covers most engineer's usecases. I would probably recommend looking at that for practical
+purposes.
 
 Also, I didn't really go into what makes prototype-based programming so especially powerful. The main reason is that because
 objects inherit directly from other objects, prototype-based languages allow you to easily alter prototypes at runtime. In
