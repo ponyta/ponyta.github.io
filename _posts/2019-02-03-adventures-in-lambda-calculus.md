@@ -64,11 +64,9 @@ which is actually correct. It is important to avoid name collisions by renaming 
 substitution to get the correct answer.
 
 {% capture note0 %}
-
 I've glossed over some of these details rather quickly. If you would like a more formal definition of
 \\(\alpha\\)-equivalence, \\(\beta\\)-reduction, and the importance between *bound* and *free* variables, I suggest
 reading one of the resources cited at the beginning of the article.
-
 {% endcapture %} 
 {% include note.html content=note0 %}
 
