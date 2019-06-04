@@ -9,7 +9,7 @@ Hi! My name is Chun Li, and this is my blog.
 I have a Bachelors of Computer Science from the University of Waterloo,
 and a black cat Pistachio (although I call him Chio). He likes to stay up
 with me when I work late at night, but doesn't always manage to stay
-awake! :smile:
+awake!
 
 I enjoy reading, playing with my cat, walks with my girlfriend Allison, and cooking.
 
