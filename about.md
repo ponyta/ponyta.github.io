@@ -13,12 +13,12 @@ awake!
 
 I enjoy reading, playing with my cat, walks with my girlfriend Allison, and cooking.
 
-I currently work at Google in San Francisco.
+I currently work at [Google](https://www.google.com) in San Francisco.
 
 ### Past Work
 
 I went to the [Recurse Center](https://www.recurse.com) in Brooklyn, where I studied
-functional programming and read SICP!
+functional programming and read SICP.
 
 I used to work at [BiblioCommons](https://www.bibliocommons.com/) as
 a backend engineer.
