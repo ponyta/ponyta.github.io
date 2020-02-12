@@ -16,11 +16,8 @@
 title: Chun Li
 email: chunli.developer@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.chunli.me" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: chunnn_li
+url: "https://ponyta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: ponyta
-
-
 
 # Build settings
 markdown: kramdown
