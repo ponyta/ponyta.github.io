@@ -1,11 +1,9 @@
-# Makefile for my blog
+# Default run in dev mode
 .DEFAULT_GOAL=dev
 
 install:
-	bundle install --path vendor/bundle
+	bundle install
 prod:
 	JEKYLL_ENV=production bundle exec jekyll build
 dev:
 	JEKYLL_ENV=development bundle exec jekyll serve --drafts
-all:
-	bundle exec jekyll build
